@@ -12,10 +12,18 @@ import { MatCard} from "@angular/material/card";
 import { MatCardTitle } from "@angular/material/card";
 import { MatCardContent } from "@angular/material/card";
 import { MatCardSubtitle } from "@angular/material/card";
-import { FormsModule } from "@angular/forms";
+import {FormControl, FormsModule, NgControl} from "@angular/forms";
+import {Provider} from "@angular/core";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
+    const NG_CONTROL_PROVIDER: Provider  = {
+      provide: NgControl,
+      useClass: class extends NgControl {
+        control = new FormControl();
+        viewToModelUpdate() {}
+      }};
+
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
@@ -33,9 +41,10 @@ describe('AppComponent', () => {
         MatCardTitle,
         MatCardContent,
         MatCardSubtitle
-
-      ],
-    }).compileComponents();
+      ]}).overrideComponent(AppComponent, {
+      add: { providers: [NG_CONTROL_PROVIDER] },
+    })
+      .compileComponents();
   }));
 
   it('should create the app', () => {

@@ -10,7 +10,7 @@ import {MatListModule} from "@angular/material/list";
 import { UserEntryComponent } from './user-entry/user-entry.component';
 import { EntriesComponent } from './entries/entries.component';
 import { RaffleEntryComponent } from './raffle-entry/raffle-entry.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormControl, FormsModule, NgControl, ReactiveFormsModule} from "@angular/forms";
 import {RaffleNamesService} from "./raffle-names.service";
 import {MatInputModule} from "@angular/material/input";
 import { AdminComponent } from './admin/admin.component';

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {RaffleNamesService} from "../raffle-names.service";
 import {FormControl, FormGroup} from "@angular/forms";
 
@@ -8,19 +8,20 @@ import {FormControl, FormGroup} from "@angular/forms";
   templateUrl: './user-entry.component.html',
   styleUrls: ['./user-entry.component.css']
 })
+
 export class UserEntryComponent implements OnInit {
 
   raffleCompletedUserEntry: boolean =false;
   newName:string='';
-  fg : FormGroup;
 
   constructor(private raffleNamesService : RaffleNamesService) {
+
+    console.log( ' UserEntryComponent created...');
+
      raffleNamesService.getRaffleCompletedWrapperSubject().subscribe( data => {
       this.raffleCompletedUserEntry = data.getRaffleCompleted()
     });
-     this.fg = new FormGroup({
-       myinput: new FormControl()
-     });
+
   }
 
   ngOnInit(): void {

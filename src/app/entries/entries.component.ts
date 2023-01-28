@@ -6,6 +6,7 @@ import {RaffleNamesService} from "../raffle-names.service";
   templateUrl: './entries.component.html',
   styleUrls: ['./entries.component.css']
 })
+
 export class EntriesComponent implements OnInit {
 
   raffleEntries: String[] = new Array();
