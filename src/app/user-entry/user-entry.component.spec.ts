@@ -3,7 +3,8 @@ import { UserEntryComponent } from './user-entry.component';
 
 import { MatFormField } from "@angular/material/form-field";
 import {FormControl, FormsModule, NgControl} from "@angular/forms";
-import { MatInputModule} from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
+
 
 
 describe('UserEntryComponent', () => {
@@ -15,7 +16,7 @@ describe('UserEntryComponent', () => {
       declarations: [ UserEntryComponent,
         MatFormField
         ],
-      imports:[ FormsModule ]
+      imports:[ FormsModule , MatSelectModule]
     })
     .compileComponents();
 

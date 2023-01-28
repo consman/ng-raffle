@@ -12,7 +12,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class UserEntryComponent implements OnInit {
 
   raffleCompletedUserEntry: boolean =false;
-  newName:string='';
+  newName:string=' ';
 
   constructor(private raffleNamesService : RaffleNamesService) {
 

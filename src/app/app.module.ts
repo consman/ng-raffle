@@ -16,6 +16,7 @@ import {MatInputModule} from "@angular/material/input";
 import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from "@angular/material/button";
+import { MatSelectModule } from  "@angular/material/select";
 
 import {Injectable, NgModule} from "@angular/core";
 
@@ -40,7 +41,8 @@ import {Injectable, NgModule} from "@angular/core";
     FormsModule,
     MatSliderModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   exports:[MatInputModule],
   providers: [RaffleNamesService],

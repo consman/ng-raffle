@@ -1,12 +1,12 @@
-<div>
-  <mat-form-field  *ngIf="!raffleCompletedUserEntry" class="example-full-width mat-form-field ng-tns-c7-0 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder">
+<div *ngIf="!raffleCompletedUserEntry">
+  <mat-form-field class="example-full-width mat-form-field ng-tns-c7-0 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-legacy mat-form-field-can-float mat-form-field-hide-placeholder">
     <div>
       <input
         aria-invalid="false" aria-required="false" class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored" id="mat-input-0"
-        matInput placeholder="Your name" type="text" [(ngModel)]="newName"/>
+        matInput=" " placeholder="Input" type="text" [(ngModel)]="newName"/>
     </div>
   </mat-form-field>
-  <button *ngIf="!raffleCompletedUserEntry" mat-raised-button color="primary" (click)="addEntry();">
+  <button matInput=" " mat-raised-button color="primary" (click)="addEntry();">
     <span class="mat-button-wrapper">Enter the raffle</span>
   </button>
 </div>
