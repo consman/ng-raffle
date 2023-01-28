@@ -4,13 +4,15 @@ import { UserEntryComponent} from "../user-entry/user-entry.component";
 import { EntriesComponent } from "../entries/entries.component";
 import { AdminComponent } from "../admin/admin.component";
 
-import { MatFormField } from "@angular/material/form-field";
+import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
 import { MatToolbar } from "@angular/material/toolbar";
 import { MatCard } from "@angular/material/card";
 import { MatCardTitle } from "@angular/material/card";
 import { MatCardContent } from "@angular/material/card";
 import { MatCardSubtitle } from "@angular/material/card";
-import { FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from '@angular/material/input';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('RaffleEntryComponent', () => {
   let component: RaffleEntryComponent;
@@ -29,7 +31,7 @@ describe('RaffleEntryComponent', () => {
         AdminComponent,
         MatCardSubtitle
       ],
-      imports:[ FormsModule ]
+      imports:[ FormsModule, ReactiveFormsModule, MatFormFieldModule , MatInputModule, NoopAnimationsModule]
     })
     .compileComponents();
   }));
