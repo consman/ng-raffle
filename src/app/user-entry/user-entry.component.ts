@@ -11,8 +11,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 export class UserEntryComponent implements OnInit {
 
   raffleCompletedUserEntry: boolean =false;
-  newName:string='';
-  fg : FormGroup;
+  fg : FormGroup <any>;
 
   constructor(private raffleNamesService : RaffleNamesService) {
      raffleNamesService.getRaffleCompletedWrapperSubject().subscribe( data => {
@@ -27,9 +26,8 @@ export class UserEntryComponent implements OnInit {
   }
 
   addEntry(){
-    this.raffleNamesService.addNameToRaffleNames(this.newName);
-    this.newName='';
+    this.raffleNamesService.addNameToRaffleNames(this.fg.get('myinput')?.value);
+    this.fg.setValue({['myinput']:''});
   }
-
 
 }

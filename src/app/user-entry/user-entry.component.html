@@ -3,7 +3,7 @@
           <div [formGroup]="fg" >
             <input
                    aria-invalid="false" aria-required="false" class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored" id="mat-input-0"
-                   matInput formControlName="myinput" placeholder="Your name" type="text" [(ngModel)]="newName"/>
+                   matInput formControlName="myinput" placeholder="Your name" type="text" >
           </div>
   </mat-form-field>
   <button *ngIf="!raffleCompletedUserEntry" mat-raised-button color="primary" (click)="addEntry();">
