@@ -17,7 +17,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from "@angular/material/button";
 
-import {Injectable, NgModule} from "@angular/core";
+import {NgModule} from "@angular/core";
 
 export const MATERIAL_MODULES =  [
   FormsModule,
@@ -38,17 +38,12 @@ export const MATERIAL_MODULES =  [
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    //NoopAnimationsModule,
     MatToolbarModule,
     MatCardModule,
-    //MatFormFieldModule,
-    //MatInputModule,
     MatChipsModule,
     MatListModule,
-    //FormsModule,
     MatSliderModule,
     MatButtonModule,
-    //ReactiveFormsModule
     MATERIAL_MODULES
   ],
   exports:[MatInputModule],

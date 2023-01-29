@@ -12,9 +12,6 @@ import { MatCard} from "@angular/material/card";
 import { MatCardTitle } from "@angular/material/card";
 import { MatCardContent } from "@angular/material/card";
 import { MatCardSubtitle } from "@angular/material/card";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MatInputModule} from '@angular/material/input';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MATERIAL_MODULES} from "./app.module";
 
 describe('AppComponent', () => {
