@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import {TestBed, async, waitForAsync} from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { RaffleEntryComponent } from './raffle-entry/raffle-entry.component';
@@ -15,7 +15,7 @@ import { MatCardSubtitle } from "@angular/material/card";
 import {MATERIAL_MODULES} from "./app.module";
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule, MATERIAL_MODULES

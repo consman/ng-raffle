@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
 import { RaffleEntryComponent } from './raffle-entry.component';
 import { UserEntryComponent} from "../user-entry/user-entry.component";
 import { EntriesComponent } from "../entries/entries.component";
@@ -16,7 +16,7 @@ describe('RaffleEntryComponent', () => {
   let component: RaffleEntryComponent;
   let fixture: ComponentFixture<RaffleEntryComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ RaffleEntryComponent,
         MatFormField,
