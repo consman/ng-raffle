@@ -19,6 +19,14 @@ import {MatButtonModule} from "@angular/material/button";
 
 import {Injectable, NgModule} from "@angular/core";
 
+export const MATERIAL_MODULES =  [
+  FormsModule,
+  ReactiveFormsModule,
+  MatFormFieldModule ,
+  MatInputModule,
+  NoopAnimationsModule
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,17 +38,18 @@ import {Injectable, NgModule} from "@angular/core";
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    NoopAnimationsModule,
+    //NoopAnimationsModule,
     MatToolbarModule,
     MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
+    //MatFormFieldModule,
+    //MatInputModule,
     MatChipsModule,
     MatListModule,
-    FormsModule,
+    //FormsModule,
     MatSliderModule,
     MatButtonModule,
-    ReactiveFormsModule
+    //ReactiveFormsModule
+    MATERIAL_MODULES
   ],
   exports:[MatInputModule],
   providers: [RaffleNamesService],

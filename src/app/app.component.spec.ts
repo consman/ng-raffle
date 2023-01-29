@@ -15,13 +15,13 @@ import { MatCardSubtitle } from "@angular/material/card";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from '@angular/material/input';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MATERIAL_MODULES} from "./app.module";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule,
-        FormsModule, ReactiveFormsModule, MatFormFieldModule , MatInputModule, NoopAnimationsModule
+        RouterTestingModule, MATERIAL_MODULES
       ],
       declarations: [
         AppComponent,
@@ -35,8 +35,7 @@ describe('AppComponent', () => {
         MatCardTitle,
         MatCardContent,
         MatCardSubtitle
-
-      ],
+      ], providers: [ MATERIAL_MODULES]
     }).compileComponents();
   }));
 

@@ -7,6 +7,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {Injectable} from "@angular/core";
 import {MatInputModule} from '@angular/material/input';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MATERIAL_MODULES} from "../app.module";
 
 describe('UserEntryComponent', () => {
   let component: UserEntryComponent;
@@ -15,7 +16,7 @@ describe('UserEntryComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserEntryComponent],
-      imports:[ FormsModule, ReactiveFormsModule, MatFormFieldModule , MatInputModule, NoopAnimationsModule]
+      imports:[ MATERIAL_MODULES]
     })
     .compileComponents();
   }));

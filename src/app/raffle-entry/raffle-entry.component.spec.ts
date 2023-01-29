@@ -13,6 +13,7 @@ import { MatCardSubtitle } from "@angular/material/card";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from '@angular/material/input';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MATERIAL_MODULES} from "../app.module";
 
 describe('RaffleEntryComponent', () => {
   let component: RaffleEntryComponent;
@@ -31,7 +32,7 @@ describe('RaffleEntryComponent', () => {
         AdminComponent,
         MatCardSubtitle
       ],
-      imports:[ FormsModule, ReactiveFormsModule, MatFormFieldModule , MatInputModule, NoopAnimationsModule]
+      imports:[MATERIAL_MODULES]
     })
     .compileComponents();
   }));
