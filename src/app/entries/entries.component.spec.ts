@@ -29,4 +29,8 @@ describe('EntriesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should not get some raffle names during a unit test',()=>{
+    expect(component.raffleEntries.length).toEqual(0);
+  });
 });

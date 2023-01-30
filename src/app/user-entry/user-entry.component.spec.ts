@@ -24,4 +24,19 @@ describe('UserEntryComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should not complete the raffle in a unit test',()=>{
+    expect(component.raffleCompletedUserEntry).toBeFalsy();
+  });
+
+  it('should have a form control in the form group called myinput and be blank',()=>{
+    expect(component.fg.get('myinput')?.value).toBeFalsy();
+  });
+
+  it('should add an entry',()=>{
+    component.fg.setValue({['myinput']:'ThomasAmsler'});
+    component.addEntry();
+    expect(component.fg.get('myinput')?.value).toBeFalsy();
+  });
+
 });
