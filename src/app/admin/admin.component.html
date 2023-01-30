@@ -1,12 +1,12 @@
   <div>
-    <button *ngIf="!raffleCompletedAdmin" (click)="drawWinners();" color="primary" class="mat-raised-button mat-primary mat-accent">
+    <button data-test="draw-winners" *ngIf="!raffleCompletedAdmin" (click)="drawWinners();" color="primary" class="mat-raised-button mat-primary mat-accent">
       <span class="mat-button-wrapper">Draw Winners</span>
       <div class="mat-button-ripple mat-ripple" matripple="">
       </div>
       <div class="mat-button-focus-overlay">
       </div>
     </button>
-    <button (click)="resetRaffle();" class="mat-raised-button mat-accent mat-button">
+    <button data-test="reset-raffle" (click)="resetRaffle();" class="mat-raised-button mat-accent mat-button">
       <span class="mat-button-wrapper">Reset Raffle</span>
       <div class="mat-button-ripple mat-ripple" matripple="">
       </div>
@@ -17,7 +17,7 @@
 <mat-card-content matInput  class="mat-card-content" *ngIf="winners.length>0">
   <p><br/>The winners are:</p>
   <mat-list>
-    <mat-list-item *ngFor="let winner of winners; index as i">
+    <mat-list-item data-test="winner" *ngFor="let winner of winners; index as i">
       {{(i+1)}} - {{winner}}
     </mat-list-item>
   </mat-list>

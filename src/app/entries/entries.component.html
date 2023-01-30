@@ -2,7 +2,7 @@
   <mat-card-subtitle>Entries:</mat-card-subtitle>
     <mat-card-content>
       <mat-chip-listbox *ngIf="raffleEntries.length > 0">
-      <mat-chip class="mat-chip-selected" *ngFor="let raffleEntry of raffleEntries " > {{raffleEntry}} </mat-chip>
+      <mat-chip data-test="entry" class="mat-chip-selected" *ngFor="let raffleEntry of raffleEntries " > {{raffleEntry}} </mat-chip>
 
     </mat-chip-listbox>
     </mat-card-content>
