@@ -24,7 +24,8 @@ export const MATERIAL_MODULES =  [
   ReactiveFormsModule,
   MatFormFieldModule ,
   MatInputModule,
-  NoopAnimationsModule
+  NoopAnimationsModule,
+  MatChipsModule
 ];
 
 @NgModule({

@@ -4,6 +4,7 @@ import { MatCardSubtitle } from "@angular/material/card";
 import { MatCardContent } from "@angular/material/card";
 
 import { EntriesComponent } from './entries.component';
+import {MATERIAL_MODULES} from "../app.module";
 
 describe('EntriesComponent', () => {
   let component: EntriesComponent;
@@ -15,7 +16,8 @@ describe('EntriesComponent', () => {
         MatCard,
         MatCardSubtitle,
         MatCardContent
-        ]
+        ],
+      imports:[MATERIAL_MODULES]
     })
     .compileComponents();
   }));
