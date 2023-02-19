@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {RaffleNamesService} from "../raffle-names.service";
 import {FormControl, FormGroup} from "@angular/forms";
 
-
 @Component({
   selector: 'app-user-entry',
   templateUrl: './user-entry.component.html',
