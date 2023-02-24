@@ -1,6 +1,6 @@
 describe("Test GDG Raffle App", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:4200");
+    cy.visit("http://127.0.0.1:4200");
   });
 
   it("Shows the tool bar.",()=>{
