@@ -1,12 +1,17 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule, NgIf } from '@angular/common';
 import {RaffleNamesService} from "../raffle-names.service";
+import {MatCardModule} from "@angular/material/card";
+import {MatListModule} from "@angular/material/list";
 
 @Component({
   selector: 'app-admin',
+  standalone: true,
+  imports: [CommonModule, NgIf,MatCardModule,MatListModule],
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  styleUrl: './admin.component.css'
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
 
   raffleEntries: String[] = new Array;
   winners: String []  = new Array;
@@ -23,9 +28,6 @@ export class AdminComponent implements OnInit {
     raffleNamesService.getRaffleCompletedWrapperSubject().subscribe( data => {
       this.raffleCompletedAdmin = data.getRaffleCompleted()
     });
-  }
-
-  ngOnInit(): void {
   }
 
   drawWinners() {
@@ -77,3 +79,4 @@ export class AdminComponent implements OnInit {
     }
   }
 }
+

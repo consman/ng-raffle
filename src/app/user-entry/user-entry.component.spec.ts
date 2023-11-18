@@ -1,21 +1,29 @@
-import {async, ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from "@angular/material/form-field";
 import { UserEntryComponent } from './user-entry.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatInputModule} from "@angular/material/input";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatChipsModule} from "@angular/material/chips";
 
-import {MATERIAL_MODULES} from "../app.module";
 
 describe('UserEntryComponent', () => {
   let component: UserEntryComponent;
   let fixture: ComponentFixture<UserEntryComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ UserEntryComponent],
-      imports:[ MATERIAL_MODULES]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [CommonModule, UserEntryComponent, 
+        FormsModule,
+        ReactiveFormsModule,
+        MatFormFieldModule ,
+        MatInputModule,
+        BrowserAnimationsModule,
+        MatChipsModule]
     })
     .compileComponents();
-  }));
-
-  beforeEach(() => {
+    
     fixture = TestBed.createComponent(UserEntryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -24,6 +32,7 @@ describe('UserEntryComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 
   it('should not complete the raffle in a unit test',()=>{
     expect(component.raffleCompletedUserEntry).toBeFalsy();

@@ -1,17 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from "@angular/material/card";
+import { UserEntryComponent } from '../user-entry/user-entry.component';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { EntriesComponent } from '../entries/entries.component';
+import { AdminComponent } from '../admin/admin.component';
 
 @Component({
   selector: 'app-raffle-entry',
+  standalone: true,
+  imports: [CommonModule, MatToolbarModule, MatCardModule, UserEntryComponent, MatFormFieldModule, EntriesComponent,AdminComponent],
   templateUrl: './raffle-entry.component.html',
-  styleUrls: ['./raffle-entry.component.css']
+  styleUrl: './raffle-entry.component.css'
 })
-export class RaffleEntryComponent implements OnInit {
-
+export class RaffleEntryComponent {
   constructor() {
     console.log( ' The ng-raffle app is running.');
   }
-
-  ngOnInit(): void {
-  }
-
 }

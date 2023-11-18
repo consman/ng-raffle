@@ -1,19 +1,20 @@
-import {async, ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
-
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AdminComponent } from './admin.component';
+
+//import {RaffleNamesService} from "../raffle-names.service";
+import {MatCardModule} from "@angular/material/card";
+import {MatListModule} from "@angular/material/list";
 
 describe('AdminComponent', () => {
   let component: AdminComponent;
   let fixture: ComponentFixture<AdminComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AdminComponent ]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AdminComponent,MatCardModule,MatListModule]
     })
     .compileComponents();
-  }));
-
-  beforeEach(() => {
+    
     fixture = TestBed.createComponent(AdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -22,7 +23,6 @@ describe('AdminComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
   it('should draw winners ',()=>{
     component.raffleEntries = ['Oleg','Al','Kyle','Magendiran','Ryan'];
     component.drawWinners();

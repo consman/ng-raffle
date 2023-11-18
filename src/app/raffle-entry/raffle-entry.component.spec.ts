@@ -1,40 +1,20 @@
-import {async, ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RaffleEntryComponent } from './raffle-entry.component';
-import { UserEntryComponent} from "../user-entry/user-entry.component";
-import { EntriesComponent } from "../entries/entries.component";
-import { AdminComponent } from "../admin/admin.component";
+import { EntriesComponent } from '../entries/entries.component';
 
-import {MatFormField} from "@angular/material/form-field";
-import { MatToolbar } from "@angular/material/toolbar";
-import { MatCard } from "@angular/material/card";
-import { MatCardTitle } from "@angular/material/card";
-import { MatCardContent } from "@angular/material/card";
-import { MatCardSubtitle } from "@angular/material/card";
-import {MATERIAL_MODULES} from "../app.module";
+//import {RaffleNamesService} from "../raffle-names.service";
 
 describe('RaffleEntryComponent', () => {
   let component: RaffleEntryComponent;
   let fixture: ComponentFixture<RaffleEntryComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ RaffleEntryComponent,
-        MatFormField,
-        MatToolbar,
-        MatCard,
-        MatCardTitle,
-        MatCardContent,
-        UserEntryComponent,
-        EntriesComponent,
-        AdminComponent,
-        MatCardSubtitle
-      ],
-      imports:[MATERIAL_MODULES]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [RaffleEntryComponent,BrowserAnimationsModule,EntriesComponent]
     })
     .compileComponents();
-  }));
-
-  beforeEach(() => {
+    
     fixture = TestBed.createComponent(RaffleEntryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

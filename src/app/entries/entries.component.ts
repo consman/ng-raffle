@@ -1,13 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {RaffleNamesService} from "../raffle-names.service";
+import {MatChipsModule} from "@angular/material/chips";
 
 @Component({
   selector: 'app-entries',
+  standalone: true,
+  imports: [CommonModule,MatChipsModule],
   templateUrl: './entries.component.html',
-  styleUrls: ['./entries.component.css']
+  styleUrl: './entries.component.css'
 })
-export class EntriesComponent implements OnInit {
-
+export class EntriesComponent {
   raffleEntries: String[] = new Array();
 
   constructor(private raffleNamesService : RaffleNamesService) {
@@ -15,9 +18,4 @@ export class EntriesComponent implements OnInit {
           this.raffleEntries = data;
         });
   }
-
-  ngOnInit(): void {
-  }
-
-
 }

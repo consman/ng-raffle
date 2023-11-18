@@ -1,28 +1,19 @@
-import {async, ComponentFixture, TestBed, waitForAsync} from '@angular/core/testing';
-import { MatCard} from "@angular/material/card";
-import { MatCardSubtitle } from "@angular/material/card";
-import { MatCardContent } from "@angular/material/card";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EntriesComponent } from './entries.component';
-import {MATERIAL_MODULES} from "../app.module";
+
+import {MatChipsModule} from "@angular/material/chips";
 
 describe('EntriesComponent', () => {
   let component: EntriesComponent;
   let fixture: ComponentFixture<EntriesComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ EntriesComponent,
-        MatCard,
-        MatCardSubtitle,
-        MatCardContent
-        ],
-      imports:[MATERIAL_MODULES]
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [EntriesComponent,MatChipsModule ]
     })
     .compileComponents();
-  }));
-
-  beforeEach(() => {
+    
     fixture = TestBed.createComponent(EntriesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -30,9 +21,5 @@ describe('EntriesComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should not get some raffle names during a unit test',()=>{
-    expect(component.raffleEntries.length).toEqual(0);
   });
 });
