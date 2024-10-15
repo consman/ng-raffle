@@ -7,6 +7,7 @@ import {RaffleCompletedWrapper} from './raffle-completed';
 })
 export class RaffleNamesService {
 
+
   raffleNames : string [] = new Array();
   raffleCompletedWrapper: RaffleCompletedWrapper;
   raffleCompletedWrapperSubject: Subject<RaffleCompletedWrapper>;
@@ -18,7 +19,6 @@ export class RaffleNamesService {
       // this must be the first time the user is using the app and we start with an empty Array
       this.raffleNames = [];
       this.synchNamesToLocalStorage();
-      console.log('Raffle Names service is running..');
    }
 
    this.raffleCompletedWrapperSubject = new Subject<RaffleCompletedWrapper> ();
@@ -89,3 +89,4 @@ export class RaffleNamesService {
 
 
 }
+

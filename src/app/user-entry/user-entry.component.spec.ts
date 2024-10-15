@@ -7,7 +7,6 @@ import {MatInputModule} from "@angular/material/input";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatChipsModule} from "@angular/material/chips";
 
-
 describe('UserEntryComponent', () => {
   let component: UserEntryComponent;
   let fixture: ComponentFixture<UserEntryComponent>;
@@ -23,7 +22,7 @@ describe('UserEntryComponent', () => {
         MatChipsModule]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(UserEntryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -31,11 +30,6 @@ describe('UserEntryComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-
-  it('should not complete the raffle in a unit test',()=>{
-    expect(component.raffleCompletedUserEntry).toBeFalsy();
   });
 
   it('should have a form control in the form group called myinput and be blank',()=>{

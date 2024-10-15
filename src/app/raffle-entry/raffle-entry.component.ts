@@ -16,6 +16,6 @@ import { AdminComponent } from '../admin/admin.component';
 })
 export class RaffleEntryComponent {
   constructor() {
-    console.log( ' The ng-raffle app is running.');
+    console.log( ' The ng-raffle app ( raffle-entry component ) is running.');
   }
 }
