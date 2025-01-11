@@ -1,5 +1,6 @@
 <span>Entries:</span><br/>
 <mat-chip-listbox aria-label="Entries">
-
-  <mat-chip-option color="primary" selected data-test="entry" *ngFor="let raffleEntry of raffleEntries " > {{raffleEntry}} </mat-chip-option>
+  @for(raffleEntry of raffleEntries; track raffleEntry){
+    <mat-chip-option color="primary" selected data-test="entry"> {{raffleEntry}} </mat-chip-option>
+  }
 </mat-chip-listbox>

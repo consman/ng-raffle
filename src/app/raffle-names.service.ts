@@ -12,15 +12,16 @@ export class RaffleNamesService {
   raffleCompletedWrapper: RaffleCompletedWrapper;
   raffleCompletedWrapperSubject: Subject<RaffleCompletedWrapper>;
 
-  constructor() {
-
+  constructor() { 
+    //afterRender( ()=>{
     this.getRaffleNamesFromStorage();
     if (!this.raffleNames || this.raffleNames.length <1 ){
       // this must be the first time the user is using the app and we start with an empty Array
       this.raffleNames = [];
       this.synchNamesToLocalStorage();
-   }
-
+    }
+  //});
+  
    this.raffleCompletedWrapperSubject = new Subject<RaffleCompletedWrapper> ();
    this.raffleCompletedWrapper = new RaffleCompletedWrapper ();
    this.raffleCompletedWrapper.setRaffleCompleted(false);
@@ -55,6 +56,7 @@ export class RaffleNamesService {
  addNameToRaffleNames( newName: string ): Observable<any> {
    this.raffleNames.push(newName);
    this.synchNamesToLocalStorage();
+   console.log('Entry added in RaffleNamesService: ' + newName);
    return of(this.raffleNames);
  }
 
@@ -89,4 +91,3 @@ export class RaffleNamesService {
 
 
 }
-

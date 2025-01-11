@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EntriesComponent } from './entries.component';
-import {MatChipsModule} from "@angular/material/chips";
+import { MatChipsModule} from "@angular/material/chips";
 
 describe('EntriesComponent', () => {
   let component: EntriesComponent;

@@ -1,11 +1,14 @@
 <div>
-    <button data-test="draw-winners" *ngIf="!raffleCompletedAdmin" (click)="drawWinners();" mat-raised-button color="accent">
-      <span class="mat-button-wrapper">Draw Winners</span>
-      <div class="mat-button-ripple mat-ripple" matripple="">
-      </div>
-      <div class="mat-button-focus-overlay">
-      </div>
-    </button>
+    @if(!raffleCompletedAdmin){
+        <button data-test="draw-winners" (click)="drawWinners();" mat-raised-button color="accent">
+        <span class="mat-button-wrapper">Draw Winners</span>
+        <div class="mat-button-ripple mat-ripple" matripple="">
+        </div>
+        <div class="mat-button-focus-overlay">
+        </div>
+        </button>
+    }
+
     <button data-test="reset-raffle" (click)="resetRaffle();" mat-raised-button color="accent">
       <span class="mat-button-wrapper">Reset Raffle</span>
       <div class="mat-button-ripple mat-ripple" matripple="">
@@ -14,12 +17,16 @@
       </div>
     </button>
   </div>
-<mat-card-content matInput  class="mat-card-content" *ngIf="winners.length>0">
-  <p><br/>The winners are:</p>
-  <mat-list>
-    <mat-list-item data-test="winner" *ngFor="let winner of winners; index as i">
-      {{(i+1)}} - {{winner}}
-    </mat-list-item>
-  </mat-list>
-</mat-card-content>
 
+  @if(winners.length > 0){
+    <mat-card-content matInput  class="mat-card-content">
+      <p><br/>The winners are:</p>
+      <mat-list>
+        @for(winner of winners; track winner; let i = $index){
+        <mat-list-item data-test="winner"> <!-- </mat-list-item> *ngFor="let winner of winners; index as i"> -->
+          {{(i+1)}} - {{winner}}
+        </mat-list-item>
+      }
+      </mat-list>
+    </mat-card-content>
+}

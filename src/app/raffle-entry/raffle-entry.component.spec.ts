@@ -1,7 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import { RaffleEntryComponent } from './raffle-entry.component';
 import { EntriesComponent } from '../entries/entries.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('RaffleEntryComponent', () => {
   let component: RaffleEntryComponent;
@@ -9,7 +10,7 @@ describe('RaffleEntryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RaffleEntryComponent,BrowserAnimationsModule,EntriesComponent]
+      imports: [RaffleEntryComponent,EntriesComponent,BrowserAnimationsModule]
     })
     .compileComponents();
 

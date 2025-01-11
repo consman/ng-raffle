@@ -1,11 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { UserEntryComponent } from './user-entry.component';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { UserEntryComponent } from './user-entry.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatChipsModule} from "@angular/material/chips";
+
 
 describe('UserEntryComponent', () => {
   let component: UserEntryComponent;

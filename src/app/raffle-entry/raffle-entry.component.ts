@@ -9,13 +9,12 @@ import { AdminComponent } from '../admin/admin.component';
 
 @Component({
   selector: 'app-raffle-entry',
-  standalone: true,
   imports: [CommonModule, MatToolbarModule, MatCardModule, UserEntryComponent, MatFormFieldModule, EntriesComponent,AdminComponent],
   templateUrl: './raffle-entry.component.html',
   styleUrl: './raffle-entry.component.css'
 })
 export class RaffleEntryComponent {
   constructor() {
-    console.log( ' The ng-raffle app ( raffle-entry component ) is running.');
+    console.log( ' The v19 ng-raffle app ( raffle-entry component ) is running.');
   }
 }

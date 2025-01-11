@@ -12,7 +12,7 @@ describe('AdminComponent', () => {
       imports: [AdminComponent,MatCardModule,MatListModule]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(AdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

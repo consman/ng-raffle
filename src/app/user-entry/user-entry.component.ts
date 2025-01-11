@@ -7,9 +7,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from "@angular/material/input";
 import {MatChipsModule} from "@angular/material/chips";
 
+
 @Component({
   selector: 'app-user-entry',
-  standalone: true,
   imports: [CommonModule, NgIf, FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule ,
@@ -23,20 +23,23 @@ export class UserEntryComponent {
   fg : FormGroup <any>;
 
   constructor(private raffleNamesService : RaffleNamesService) {     
-     raffleNamesService.getRaffleCompletedWrapperSubject().subscribe( data => {
-      this.raffleCompletedUserEntry = data.getRaffleCompleted()
+    raffleNamesService.getRaffleCompletedWrapperSubject().subscribe( data => {
+     this.raffleCompletedUserEntry = data.getRaffleCompleted()
+   });
+    this.fg = new FormGroup({
+      myinput: new FormControl()
     });
-     this.fg = new FormGroup({
-       myinput: new FormControl()
-     });
-  }
+ }
 
-  ngOnInit(): void {
-  }
+ ngOnInit(): void {
+ }
 
-  addEntry(){
-    this.raffleNamesService.addNameToRaffleNames(this.fg.get('myinput')?.value);
-    this.fg.setValue({['myinput']:''});
-  }
+ addEntry(){
+   this.raffleNamesService.addNameToRaffleNames(this.fg.get('myinput')?.value);
+   this.fg.setValue({['myinput']:''});
+   console.log('Entry added in UserEntryComponent: ' + this.fg.get('myinput')?.value);
+ }
+
+
 
 }
