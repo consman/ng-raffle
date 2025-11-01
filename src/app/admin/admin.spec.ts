@@ -1,26 +1,30 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AdminComponent } from './admin.component';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { Admin } from './admin';
 import {MatCardModule} from "@angular/material/card";
 import {MatListModule} from "@angular/material/list";
 
-describe('AdminComponent', () => {
-  let component: AdminComponent;
-  let fixture: ComponentFixture<AdminComponent>;
+describe('Admin', () => {
+  let component: Admin;
+  let fixture: ComponentFixture<Admin>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminComponent,MatCardModule,MatListModule]
+      providers:[provideZonelessChangeDetection()],
+      imports: [Admin,MatCardModule,MatListModule]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdminComponent);
+    fixture = TestBed.createComponent(Admin);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
+    console.log('Testing creation of component - admin');
     expect(component).toBeTruthy();
   });
+
   it('should draw winners ',()=>{
     component.raffleEntries = ['Oleg','Al','Kyle','Magendiran','Ryan'];
     component.drawWinners();

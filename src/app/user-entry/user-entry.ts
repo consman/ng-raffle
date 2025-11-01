@@ -2,11 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule, NgIf } from '@angular/common';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {FormControl, FormGroup} from "@angular/forms";
-import {RaffleNamesService} from "../raffle-names.service";
+import {RaffleNames} from "../raffle-names";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from "@angular/material/input";
 import {MatChipsModule} from "@angular/material/chips";
-
 
 @Component({
   selector: 'app-user-entry',
@@ -15,14 +14,14 @@ import {MatChipsModule} from "@angular/material/chips";
     MatFormFieldModule ,
     MatInputModule,
     MatChipsModule],
-  templateUrl: './user-entry.component.html',
-  styleUrl: './user-entry.component.css'
+  templateUrl: './user-entry.html',
+  styleUrl: './user-entry.css',
 })
-export class UserEntryComponent {
+export class UserEntry {
   raffleCompletedUserEntry: boolean =false;
   fg : FormGroup <any>;
 
-  constructor(private raffleNamesService : RaffleNamesService) {     
+  constructor(private raffleNamesService : RaffleNames) {     
     raffleNamesService.getRaffleCompletedWrapperSubject().subscribe( data => {
      this.raffleCompletedUserEntry = data.getRaffleCompleted()
    });
@@ -39,7 +38,6 @@ export class UserEntryComponent {
    this.fg.setValue({['myinput']:''});
    console.log('Entry added in UserEntryComponent: ' + this.fg.get('myinput')?.value);
  }
-
 
 
 }

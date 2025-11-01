@@ -3,12 +3,10 @@ import {Observable, of, Subject} from 'rxjs';
 import {RaffleCompletedWrapper} from './raffle-completed';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class RaffleNamesService {
-
-
-  raffleNames : string [] = new Array();
+export class RaffleNames {
+    raffleNames : string [] = new Array();
   raffleCompletedWrapper: RaffleCompletedWrapper;
   raffleCompletedWrapperSubject: Subject<RaffleCompletedWrapper>;
 

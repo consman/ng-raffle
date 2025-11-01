@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
-import {RaffleNamesService} from "../raffle-names.service";
+import {RaffleNames} from "../raffle-names";
 import {MatCardModule} from "@angular/material/card";
 import {MatListModule} from "@angular/material/list";
 
 @Component({
   selector: 'app-admin',
-  imports: [CommonModule,MatCardModule,MatListModule],
-  templateUrl: './admin.component.html',
-  styleUrl: './admin.component.css'
+  imports: [MatCardModule,MatListModule],
+  templateUrl: './admin.html',
+  styleUrl: './admin.css',
 })
-export class AdminComponent {
+export class Admin {
   raffleEntries: String[] = new Array;
   winners: String []  = new Array;
   winner: String ="";
@@ -18,7 +19,7 @@ export class AdminComponent {
   targetIndex = 0;
   raffleCompletedAdmin: boolean = false;
   
-  constructor(private raffleNamesService : RaffleNamesService) {
+  constructor(private raffleNamesService : RaffleNames) {
     raffleNamesService.getRaffleNames().subscribe( data => {
       this.raffleEntries = data;
     });
@@ -76,4 +77,5 @@ export class AdminComponent {
       this.tempEntries.shift();
     }
   }
+
 }
